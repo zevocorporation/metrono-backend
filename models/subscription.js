@@ -13,6 +13,18 @@ const subscriptionSchema = new Schema(
       required: true
     },
 
+    pack:{
+      type:String,
+      required: true
+
+    },
+
+    delivery:{
+      type:String,
+      required:true
+
+    },
+
     subscribedUser: {
       type: Schema.Types.ObjectId,
       ref: "User"

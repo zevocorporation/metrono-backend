@@ -65,20 +65,23 @@ module.exports = {
     }
   },
 
-  getCurrentOrder: async(args)=>{
+  getCurrentOrders: async(args)=>{
       try{
 
-        const order=await Order.findOne({chatId:args.chatId,paymentStatus:"Paid"}).sort({createdAt: -1});
-        if(order)
-        {
+        const orders=await Order.find({chatId:args.chatId,paymentStatus:"Paid"});
+       
+          return orders.map(order => {
             return {
-                ...order._doc,
-                _id: order.id,
-                createdAt: new Date(order._doc.createdAt).toLocaleString(),
-                updatedAt: new Date(order._doc.updatedAt).toLocaleString()
-              };
+              ...order._doc,
+              _id: order.id,
+              createdAt: new Date(order._doc.createdAt).toLocaleString(),
+              updatedAt: new Date(order._doc.updatedAt).toLocaleString()
+            };
+          });
 
-        }
+            // return order;
+
+        
 
       }
       catch(err)

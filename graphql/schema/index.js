@@ -44,6 +44,8 @@ module.exports = buildSchema(
         _id:ID!
         plan:String!
         cuisine:String!
+        pack:String!
+        delivery:String!
         subscribedUser:String!
         paymentId:String!
         paymentStatus:String!
@@ -79,6 +81,8 @@ module.exports = buildSchema(
     {
         plan:String!
         cuisine:String!
+        pack:String!
+        delivery:String!
         subscribedUser:String!
         paymentId:String!
         paymentStatus:String!
@@ -119,7 +123,7 @@ module.exports = buildSchema(
         userexists(chatId:String!):User
         getCredits(chatId:String!):Int
         getPlanDetails(chatId:String!):Subscription
-        getCurrentOrder(chatId:String!):Order
+        getCurrentOrders(chatId:String!):[Order]
         
         
     }

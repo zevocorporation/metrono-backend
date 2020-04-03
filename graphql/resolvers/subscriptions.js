@@ -7,6 +7,8 @@ module.exports ={
             {
                 plan:args.subscriptionInput.plan,
                 cuisine:args.subscriptionInput.cuisine,
+                pack:args.subscriptionInput.pack,
+                delivery:args.subscriptionInput.delivery,
                 subscribedUser:args.subscriptionInput.subscribedUser,
                 paymentId:args.subscriptionInput.paymentId,
                 paymentStatus:args.subscriptionInput.paymentStatus,
@@ -60,7 +62,7 @@ module.exports ={
     },
     changeCuisine :async (args)=>{
         try{
-            const subscription=await Subscription.findOne({chatId:args.chatId});
+            const subscription=await Subscription.findOne({chatId:args.chatId,paymentStatus:"Paid"}).sort({createdAt: -1});
             if (subscription)
             {
                 subscription.cuisine=args.cuisine;
