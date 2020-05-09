@@ -61,6 +61,30 @@ module.exports ={
             throw err;
         }
     },
+
+    getCurrentPlan: async(args)=>{
+        try{
+
+            const subscription=await Subscription.findOne({chatId:args.chatId,mealType:args.mealType,paymentStatus:"Paid"}).sort({createdAt: -1});
+            if (subscription)
+            {
+                
+                return {...subscription._doc,_id:subscription.id,createdAt:new Date(subscription._doc.createdAt).toLocaleString(),
+                    updatedAt:new Date(subscription._doc.updatedAt).toLocaleString()};
+            }
+
+
+        }
+        catch(err)
+        {
+            throw err;
+        }
+    },
+
+
+
+
+
     changeCuisine :async (args)=>{
         try{
             const subscription=await Subscription.findOne({chatId:args.chatId,paymentStatus:"Paid"}).sort({createdAt: -1});

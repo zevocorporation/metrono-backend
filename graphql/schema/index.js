@@ -126,6 +126,7 @@ module.exports = buildSchema(
         getCredits(chatId:String!):Int
         getPlanDetails(chatId:String!):Subscription
         getCurrentOrders(chatId:String!):[Order]
+        getCurrentPlan(chatId:String!,mealType:String!):Subscription
         
         
     }
