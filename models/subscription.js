@@ -5,44 +5,47 @@ const subscriptionSchema = new Schema(
   {
     plan: {
       type: String,
-      required: true
+      required: true,
     },
 
     cuisine: {
       type: String,
-      required: true
+      required: true,
     },
 
-    pack:{
-      type:String,
-      required: true
-
+    mealType: {
+      type: String,
+      required: true,
     },
 
-    delivery:{
-      type:String,
-      required:true
+    pack: {
+      type: String,
+      required: true,
+    },
 
+    delivery: {
+      type: String,
+      required: true,
     },
 
     subscribedUser: {
       type: Schema.Types.ObjectId,
-      ref: "User"
+      ref: "User",
     },
 
     paymentId: {
       type: String,
-      required: true
+      required: true,
     },
 
     paymentStatus: {
       type: String,
-      required: true
+      required: true,
     },
     chatId: {
-      type:String,
-      required:true
-    }
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 );

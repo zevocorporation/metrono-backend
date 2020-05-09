@@ -46,6 +46,7 @@ module.exports = buildSchema(
         cuisine:String!
         pack:String!
         delivery:String!
+        mealType:String!
         subscribedUser:String!
         paymentId:String!
         paymentStatus:String!
@@ -82,6 +83,7 @@ module.exports = buildSchema(
         plan:String!
         cuisine:String!
         pack:String!
+        mealType:String!
         delivery:String!
         subscribedUser:String!
         paymentId:String!

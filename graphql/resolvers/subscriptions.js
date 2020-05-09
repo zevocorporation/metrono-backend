@@ -8,6 +8,7 @@ module.exports ={
                 plan:args.subscriptionInput.plan,
                 cuisine:args.subscriptionInput.cuisine,
                 pack:args.subscriptionInput.pack,
+                mealType:args.subscriptionInput.mealType,
                 delivery:args.subscriptionInput.delivery,
                 subscribedUser:args.subscriptionInput.subscribedUser,
                 paymentId:args.subscriptionInput.paymentId,
