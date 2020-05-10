@@ -124,7 +124,7 @@ module.exports = buildSchema(
         orders:[Order!]!
         userexists(chatId:String!):User
         getCredits(chatId:String!):Int
-        getPlanDetails(chatId:String!):Subscription
+        getPlanDetails(chatId:String!):[Subscription]
         getCurrentOrders(chatId:String!):[Order]
         getCurrentPlan(chatId:String!,mealType:String!):Subscription
         
