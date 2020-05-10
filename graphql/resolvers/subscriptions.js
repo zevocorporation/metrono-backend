@@ -58,7 +58,7 @@ module.exports ={
             if(Lunch) subscriptions.push(Lunch)
             if(Dinner) subscriptions.push(Dinner)
 
-            return subscriptions;
+            return subscriptions.map(subscription => {return {...subscription._doc,createdAt: new Date(subscription._doc.createdAt).toLocaleString()}});
 
 
         }
