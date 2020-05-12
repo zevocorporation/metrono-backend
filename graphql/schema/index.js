@@ -128,6 +128,7 @@ module.exports = buildSchema(
         getPlanDetails(chatId:String!):[Subscription]
         getCurrentOrders(chatId:String!):[Order]
         getCurrentPlan(chatId:String!,mealType:String!):Subscription
+        addDeliveryCost(chatId:String!,orderType:String!,deliveryOn:String!):Boolean!
         
         
     }

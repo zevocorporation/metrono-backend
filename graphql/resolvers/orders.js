@@ -116,5 +116,27 @@ module.exports = {
       {
           throw err;
       }
+  },
+
+  addDeliveryCost: async (args)=>{
+    try{
+      // const order = Order.findOne()
+      const order =await Order.findOne({
+        $and: [
+          {chatId:args.chatId,orderType:args.orderType,deliveryOn:args.deliveryOn},
+            { $or: [{orderStatus:"Processing"}, {orderStatus: "In Kitchen"}] }
+        ]
+    })
+
+    if(order) return true
+    else return false
+
+
+      
+
+    }
+    catch(err){
+      throw err;
+    }
   }
 };
