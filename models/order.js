@@ -67,6 +67,12 @@ const orderSchema = new Schema(
       type: String,
       required: true,
     },
+
+    deliveryOn :{
+      type: String,
+      required: true,
+
+    }
   },
   { timestamps: true }
 );

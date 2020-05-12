@@ -34,6 +34,7 @@ module.exports = buildSchema(
         orderedUser:User!
         chatId:String!
         addon:String!
+        deliveryOn:String!
         createdAt:String!
         updatedAt:String!
         

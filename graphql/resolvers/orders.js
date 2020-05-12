@@ -36,6 +36,33 @@ module.exports = {
   },
 
   createOrder: async args => {
+
+    
+
+    if(args.orderInput.orderFor=="Today")
+    {
+      const today = new Date();
+      date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    }
+
+    else if(args.orderInput.orderFor=="Tomorrow")
+    {
+      const today = new Date()
+      const tomorrow = new Date(today)
+      tomorrow.setDate(tomorrow.getDate() + 1)
+
+      date = tomorrow.getFullYear()+'-'+(tomorrow.getMonth()+1)+'-'+tomorrow.getDate();
+
+
+    }
+
+    else
+    {
+      throw new Error("Invalid input");
+    }
+
+  
+
     try {
       const order = new Order({
         cuisine: args.orderInput.cuisine,
@@ -50,7 +77,8 @@ module.exports = {
         paymentStatus: args.orderInput.paymentStatus,
         orderedUser: args.orderInput.orderedUser,
         chatId: args.orderInput.chatId,
-        addon: args.orderInput.addon
+        addon: args.orderInput.addon,
+        deliveryOn:date
       });
 
       const result = await order.save();
