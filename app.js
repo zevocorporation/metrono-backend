@@ -44,7 +44,7 @@ app.use('/graphql',graphqlHTTP(
 
 
 
-mongoose.connect(`mongodb+srv://wizkid:hellodude@cluster0-7mybp.mongodb.net/metrono?retryWrites=true&w=majority`).then(()=>
+mongoose.connect(`mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0-7mybp.mongodb.net/metrono?retryWrites=true&w=majority`).then(()=>
 {
     //setting up port
     app.listen(process.env.PORT||4000);

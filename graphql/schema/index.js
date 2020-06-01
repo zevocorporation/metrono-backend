@@ -5,6 +5,7 @@ module.exports = buildSchema(
 
     type User
     {
+
         _id:ID!
         name:String!
         mobile:String!
@@ -20,6 +21,7 @@ module.exports = buildSchema(
 
     type Order
     {
+
         _id:ID!
         cuisine:String!
         orderFor:String!
@@ -42,6 +44,7 @@ module.exports = buildSchema(
 
     type Subscription 
     {
+
         _id:ID!
         plan:String!
         cuisine:String!
@@ -92,6 +95,7 @@ module.exports = buildSchema(
         chatId:String!
     }
 
+
     input OrderInput
     {
      
@@ -108,9 +112,14 @@ module.exports = buildSchema(
      orderedUser:String!
      chatId:String!
      addon:String!
+
+
     }
+
+
     input UserInput
     {
+
      name:String!
      mobile:String!
      email:String!
@@ -118,6 +127,7 @@ module.exports = buildSchema(
      chatId:String!
      
     }
+    
     type RootQuery
     {
         
