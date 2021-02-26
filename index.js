@@ -17,6 +17,8 @@ const server = new ApolloServer({
     req: integrationContext.req,
   }),
   playground: process.env.NODE_ENV || true,
+  mocks: true,
+  mockEntireSchema: false,
 });
 
 app.use(cors());
