@@ -4,7 +4,7 @@ type Vendor {
     _id: ID!   
     name: String!
     imageURL:String!
-    product:[Product!]
+    products:[Product!]
     createdAt: String!
     updatedAt: String!
   }
@@ -22,4 +22,5 @@ exports.queries = `
 
 exports.mutations = `
       addVendor(vendorInput:VendorInput):Vendor!
+      removeVendor(id:String!):Boolean!
     `;

@@ -12,9 +12,12 @@ const productSchema = new Schema(
       enum: ['VEGETABLE', 'FRUITS', 'DAIRY PRODUCTS', 'SWEETS', 'SNACKS'],
       required: true,
     },
-    vendorID: {
-      type: String,
-    },
+    vendors: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Vendor',
+      },
+    ],
     transactionID: {
       type: String,
     },

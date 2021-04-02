@@ -11,7 +11,7 @@ type Product {
     _id: ID!
     name: String!
     category:Category!
-    vendorID:String
+    vendors:[Vendor!]
     transactionID:String
     stockID:String
     createdAt: String!
@@ -21,6 +21,7 @@ type Product {
   input ProductInput{
     name: String!
     category:Category!
+    vendorID:[String!]
   }
 `;
 
