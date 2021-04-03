@@ -4,12 +4,11 @@ type User {
     firstname: String
     lastname: String
     username: String
-    userImage: String
+    profilePicture: String
     email: String
     mobile: String!
     address: String
     country: String
-    plansSubscribed: String
     createdAt: String!
     updatedAt: String!
   }
